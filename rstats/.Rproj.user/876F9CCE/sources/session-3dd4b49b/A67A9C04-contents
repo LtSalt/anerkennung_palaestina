@@ -1,0 +1,14 @@
+# Notes
+
+## Vorgen
+- Tabelle auslesen
+- Für jede Land-Zelle... 
+  - den zugehörigen Link abgreifen
+- Link in Spalte ergänzen
+- Für jeden Link...
+  - die entsprechende Seite ansteuern
+  - Content ziehen
+  - ISO-Code extrahieren
+  - in extra Spalte ablegen
+- Tabelle speichern
+  

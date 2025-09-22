@@ -1,0 +1,146 @@
+states_links_2 <- states_source %>% 
+  html_element(".wikitable") %>% 
+  html_elements("tr > td + td > span + span > a") %>% 
+  html_attr("href")  %>% 
+  subset(!str_detect(., "Datei"))
+
+states_links <- c(temp1, temp2) %>% 
+  subset(!duplicated(.)) %>% 
+  map_chr(\(href) paste0("https://de.wikipedia.org", href))
+
+
+temp <- states_source %>% 
+  html_element(".wikitable") %>% 
+  html_elements("tr > td + td > span + span") 
+
+
+
+
+###########################################################################
+# 01 Scrape
+###########################################################################
+
+
+# Dependencies ------------------------------------------------------------
+
+if(!"pacman" %in% installed.packages()) install.packages("pacman")
+pacman::p_load(tidyverse, rvest, countrycode, janitor, lubridate)
+
+
+# Scrape Table ------------------------------------------------------------
+
+url_states <- "https://de.wikipedia.org/wiki/Internationale_Anerkennung_des_Staates_Pal%C3%A4stina"
+
+states_source <- read_html(url_states)
+
+states_table <- states_source %>% 
+  html_element(".wikitable") %>% 
+  html_table()
+
+
+# Scrape Links ------------------------------------------------------------
+
+states_links <- states_source %>% 
+  html_element(".wikitable") %>% 
+  html_elements("tr > td + td > span + span + a") %>% 
+  html_attr("href") %>% 
+  map_chr(\(href) paste0("https://de.wikipedia.org", href))
+
+# damn you, incoherent html
+# Russia and Ukraine have an additional `span` wrapper
+
+states_links_complete <- states_links %>% 
+  tibble(link = .) %>% 
+  add_row(link = "https://de.wikipedia.org/wiki/Russland", .before = 39) %>% 
+  add_row(link = "https://de.wikipedia.org/wiki/Ukraine", .before = 44) 
+
+
+# Scrape ISO Codes --------------------------------------------------------
+
+# Helper functions
+
+get_iso_code <- function(url) {
+  print(url)
+  content <- read_html(url)
+  
+  content %>%
+    html_element("td:contains('ISO 3166') + td") %>%
+    html_text(trim = TRUE) %>%
+    str_split_1(", ")
+}
+
+get_iso_codes <- function(urls) {
+  n <- length(urls)
+  iso_codes <- vector("list", n)
+  
+  for(i in 1:n) {
+    iso_codes[[i]] <- get_iso_code(urls[[i]])
+    Sys.sleep(1) # be nice to Wikipedia
+  }
+  
+  iso_codes
+}
+
+# Scrape ISO codes
+
+iso_codes <- states_links_complete %>% 
+  mutate(iso_code = get_iso_codes(link))
+
+
+# Consolidate -------------------------------------------------------------
+
+wiki <- states_table %>% 
+  bind_cols(iso_codes) %>% 
+  unnest_wider(iso_code, names_sep = "_") %>% 
+  clean_names() %>% 
+  mutate(date = as.integer(str_sub(datum, -4, -1)),
+         recognizes_israel = ifelse(anerkennung_israels == "ja",
+                                    TRUE,
+                                    FALSE)) %>% 
+  select(state = land, link, iso_code_2, date, recognizes_israel)
+
+info <- codelist %>% 
+  filter(!is.na(un.name.en)) %>% 
+  select(state = country.name.de, continent, eu28, iso3c) %>% 
+  mutate(eu28 = ifelse(!is.na(eu28), TRUE, FALSE))
+
+# manual checks
+
+# wiki %>% 
+#   select(state, link) %>% 
+#   view()
+
+# wiki %>% anti_join(info, by = c("iso_code_2" = "iso3c"))
+
+states <- wiki %>% 
+  select(-state) %>% 
+  full_join(info, by = c("iso_code_2" = "iso3c")) %>% 
+  select(iso = iso_code_2,
+         state,
+         continent,
+         date,
+         recognizes_israel)
+
+view(states)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

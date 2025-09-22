@@ -1,0 +1,66 @@
+---
+title: "Explore"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+if(!"pacman" %in% installed.packages()) install.packages("pacman")
+pacman::p_load(tidyverse, plotly)
+```
+
+
+```{r}
+states <- read_csv("data/processed/states.csv")
+```
+
+```{r}
+p <- states %>% 
+  mutate(state = fct_reorder(as.factor(state), date)) %>% 
+  mutate(date = replace_na(date, 2025)) %>% 
+  ggplot() +
+  geom_point(aes(x = state, y = date, color = recognizes),
+             size = 0.4) +
+  geom_segment(aes(x = state, xend = state, 
+                   y = date, yend = 2025,
+                   color = recognizes)) +
+  geom_hline(yintercept = 2023, linetype = "dashed", linewidth = 0.2) +
+  scale_y_reverse() +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        legend.position = "none") +
+  labs(x = NULL,
+       y = "Datum",
+       color = NULL)
+
+p
+ggplotly(p)
+```
+
+
+```{r}
+states %>% 
+  filter(eu28) %>% view()
+  count(recognizes)
+  
+  
+  
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
