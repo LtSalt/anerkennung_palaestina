@@ -15,7 +15,7 @@
 
 ### 4
 - Zoomout
-- Alle Unterstützer im Jahr 2025 als Punkte. Wie vorhin.
+- Alle Unterstützer im Jahr 2025 als Punkte. Wie vorhin.    
 
 ### 5
 - Zoomout
