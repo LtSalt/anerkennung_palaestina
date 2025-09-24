@@ -25,3 +25,4 @@
 
 ## SveltePlot
 - margin shortcut funktioniert nicht
+- Transitions? Wie male ich einen Path ohne Svelte Transitions?
