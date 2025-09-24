@@ -1,0 +1,194 @@
+iso,state,continent,eu28,recognizes,date
+DZA,Algerien,Africa,FALSE,TRUE,1988
+BHR,Bahrain,Asia,FALSE,TRUE,1988
+IRQ,Irak,Asia,FALSE,TRUE,1988
+KWT,Kuwait,Asia,FALSE,TRUE,1988
+LBY,Libyen,Africa,FALSE,TRUE,1988
+MYS,Malaysia,Asia,FALSE,TRUE,1988
+MRT,Mauretanien,Africa,FALSE,TRUE,1988
+MAR,Marokko,Africa,FALSE,TRUE,1988
+SOM,Somalia,Africa,FALSE,TRUE,1988
+TUN,Tunesien,Africa,FALSE,TRUE,1988
+TUR,Türkei,Asia,FALSE,TRUE,1988
+YEM,Jemen,Asia,FALSE,TRUE,1988
+AFG,Afghanistan,Asia,FALSE,TRUE,1988
+BGD,Bangladesch,Asia,FALSE,TRUE,1988
+CUB,Kuba,Americas,FALSE,TRUE,1988
+JOR,Jordanien,Asia,FALSE,TRUE,1988
+MDG,Madagaskar,Africa,FALSE,TRUE,1988
+NIC,Nicaragua,Americas,FALSE,TRUE,1988
+PAK,Pakistan,Asia,FALSE,TRUE,1988
+QAT,Katar,Asia,FALSE,TRUE,1988
+SAU,Saudi Arabien,Asia,FALSE,TRUE,1988
+ARE,Vereinigte Arabische Emirate,Asia,FALSE,TRUE,1988
+SRB,Serbien,Europe,FALSE,TRUE,1988
+ZMB,Sambia,Africa,FALSE,TRUE,1988
+IDN,Indonesien,Asia,FALSE,TRUE,1988
+ALB,Albanien,Europe,FALSE,TRUE,1988
+BRN,Brunei Darussalam,Asia,FALSE,TRUE,1988
+DJI,Dschibuti,Africa,FALSE,TRUE,1988
+MUS,Mauritius,Africa,FALSE,TRUE,1988
+SDN,Sudan,Africa,FALSE,TRUE,1988
+CYP,Zypern,Asia,TRUE,TRUE,1988
+SVK,Slowakei,Europe,TRUE,TRUE,1988
+CZE,Tschechische Republik,Europe,TRUE,TRUE,1988
+EGY,Ägypten,Africa,FALSE,TRUE,1988
+IND,Indien,Asia,FALSE,TRUE,1988
+NGA,Nigeria,Africa,FALSE,TRUE,1988
+SYC,Seychellen,Africa,FALSE,TRUE,1988
+LKA,Sri Lanka,Asia,FALSE,TRUE,1988
+RUS,Russische Föderation,Europe,FALSE,TRUE,1988
+GMB,Gambia,Africa,FALSE,TRUE,1988
+BLR,Weißrussland,Europe,FALSE,TRUE,1988
+GIN,Guinea,Africa,FALSE,TRUE,1988
+NAM,Namibia,Africa,FALSE,TRUE,1988
+UKR,Ukraine,Europe,FALSE,TRUE,1988
+VNM,Vietnam,Asia,FALSE,TRUE,1988
+CHN,China,Asia,FALSE,TRUE,1988
+BFA,Burkina Faso,Africa,FALSE,TRUE,1988
+COM,Komoren,Africa,FALSE,TRUE,1988
+GNB,Guinea-Bissau,Africa,FALSE,TRUE,1988
+MLI,Mali,Africa,FALSE,TRUE,1988
+KHM,Kambodscha,Asia,FALSE,TRUE,1988
+MNG,Mongolei,Asia,FALSE,TRUE,1988
+SEN,Senegal,Africa,FALSE,TRUE,1988
+HUN,Ungarn,Europe,TRUE,TRUE,1988
+CPV,Cabo Verde,Africa,FALSE,TRUE,1988
+PRK,"Korea, Demokratische Volksrepublik",Asia,FALSE,TRUE,1988
+NER,Niger,Africa,FALSE,TRUE,1988
+ROU,Rumänien,Europe,TRUE,TRUE,1988
+TZA,Tansania,Africa,FALSE,TRUE,1988
+BGR,Bulgarien,Europe,TRUE,TRUE,1988
+MDV,Malediven,Asia,FALSE,TRUE,1988
+GHA,Ghana,Africa,FALSE,TRUE,1988
+TGO,Togo,Africa,FALSE,TRUE,1988
+ZWE,Simbabwe,Africa,FALSE,TRUE,1988
+TCD,Tschad,Africa,FALSE,TRUE,1988
+LAO,Demokratische Volksrepublik Laos,Asia,FALSE,TRUE,1988
+SLE,Sierra Leone,Africa,FALSE,TRUE,1988
+UGA,Uganda,Africa,FALSE,TRUE,1988
+COG,Kongo,Africa,FALSE,TRUE,1988
+AGO,Angola,Africa,FALSE,TRUE,1988
+MOZ,Mosambik,Africa,FALSE,TRUE,1988
+STP,Sao Tome und Principe,Africa,FALSE,TRUE,1988
+COD,Demokratische Republik Kongo,Africa,FALSE,TRUE,1988
+GAB,Gabun,Africa,FALSE,TRUE,1988
+OMN,Oman,Asia,FALSE,TRUE,1988
+POL,Polen,Europe,TRUE,TRUE,1988
+BWA,Botswana,Africa,FALSE,TRUE,1988
+NPL,Nepal,Asia,FALSE,TRUE,1988
+BDI,Burundi,Africa,FALSE,TRUE,1988
+CAF,Zentralafrikanische Republik,Africa,FALSE,TRUE,1988
+BTN,Bhutan,Asia,FALSE,TRUE,1988
+RWA,Ruanda,Africa,FALSE,TRUE,1989
+ETH,Äthiopien,Africa,FALSE,TRUE,1989
+IRN,Iran,Asia,FALSE,TRUE,1989
+BEN,Benin,Africa,FALSE,TRUE,1989
+GNQ,Äquatorialguinea,Africa,FALSE,TRUE,1989
+KEN,Kenia,Africa,FALSE,TRUE,1989
+VUT,Vanuatu,Oceania,FALSE,TRUE,1989
+PHL,Philippinen,Asia,FALSE,TRUE,1989
+SWZ,Swasiland,Africa,FALSE,TRUE,1991
+KAZ,Kasachstan,Asia,FALSE,TRUE,1992
+AZE,Aserbaidschan,Asia,FALSE,TRUE,1992
+GEO,Georgien,Asia,FALSE,TRUE,1992
+BIH,Bosnien und Herzegowina,Europe,FALSE,TRUE,1992
+TJK,Tadschikistan,Asia,FALSE,TRUE,1994
+UZB,Usbekistan,Asia,FALSE,TRUE,1994
+ZAF,Südafrika,Africa,FALSE,TRUE,1995
+KGZ,Kirgisistan,Asia,FALSE,TRUE,1995
+MWI,Malawi,Africa,FALSE,TRUE,1998
+TLS,Timor-Leste,Asia,FALSE,TRUE,2004
+PNG,Papua-Neuguinea,Oceania,FALSE,TRUE,2004
+TKM,Turkmenistan,Asia,FALSE,TRUE,2004
+PRY,Paraguay,Americas,FALSE,TRUE,2005
+MNE,Montenegro,Europe,FALSE,TRUE,2006
+CRI,Costa Rica,Americas,FALSE,TRUE,2008
+LBN,Libanon,Asia,FALSE,TRUE,2008
+CIV,Elfenbeinküste,Africa,FALSE,TRUE,2008
+VEN,Venezuela,Americas,FALSE,TRUE,2009
+DOM,Dominikanische Republik,Americas,FALSE,TRUE,2009
+BRA,Brasilien,Americas,FALSE,TRUE,2010
+ARG,Argentinien,Americas,FALSE,TRUE,2010
+BOL,Bolivien,Americas,FALSE,TRUE,2010
+ECU,Ecuador,Americas,FALSE,TRUE,2010
+CHL,Chile,Americas,FALSE,TRUE,2011
+GUY,Guyana,Americas,FALSE,TRUE,2011
+PER,Peru,Americas,FALSE,TRUE,2011
+SUR,Surinam,Americas,FALSE,TRUE,2011
+URY,Uruguay,Americas,FALSE,TRUE,2011
+LSO,Lesotho,Africa,FALSE,TRUE,2011
+SSD,Südsudan,Africa,FALSE,TRUE,2011
+SYR,Syrische Arabische Republik,Asia,FALSE,TRUE,2011
+LBR,Liberia,Africa,FALSE,TRUE,2011
+SLV,El Salvador,Americas,FALSE,TRUE,2011
+HND,Honduras,Americas,FALSE,TRUE,2011
+VCT,St. Vincent und die Grenadinen,Americas,FALSE,TRUE,2011
+BLZ,Belize,Americas,FALSE,TRUE,2011
+DMA,Dominica,Americas,FALSE,TRUE,2011
+ATG,Antigua und Barbuda,Americas,FALSE,TRUE,2011
+ISL,Island,Europe,FALSE,TRUE,2011
+THA,Thailand,Asia,FALSE,TRUE,2012
+GTM,Guatemala,Americas,FALSE,TRUE,2013
+GRD,Grenada,Americas,FALSE,TRUE,2013
+HTI,Haiti,Americas,FALSE,TRUE,2013
+SWE,Schweden,Europe,TRUE,TRUE,2014
+LCA,Saint Lucia,Americas,FALSE,TRUE,2015
+COL,Kolumbien,Americas,FALSE,TRUE,2018
+KNA,St. Kitts und Nevis,Americas,FALSE,TRUE,2019
+BRB,Barbados,Americas,FALSE,TRUE,2024
+JAM,Jamaika,Americas,FALSE,TRUE,2024
+TTO,Trinidad und Tobago,Americas,FALSE,TRUE,2024
+BHS,Bahamas,Americas,FALSE,TRUE,2024
+NOR,Norwegen,Europe,FALSE,TRUE,2024
+ESP,Spanien,Europe,TRUE,TRUE,2024
+IRL,Irland,Europe,TRUE,TRUE,2024
+SVN,Slowenien,Europe,TRUE,TRUE,2024
+ARM,Armenien,Asia,FALSE,TRUE,2024
+MEX,Mexiko,Americas,FALSE,TRUE,2025
+AUS,Australien,Oceania,FALSE,TRUE,2025
+CAN,Kanada,Americas,FALSE,TRUE,2025
+PRT,Portugal,Europe,TRUE,TRUE,2025
+GBR,Großbritannien,Europe,TRUE,TRUE,2025
+FRA,Frankreich,Europe,TRUE,TRUE,2025
+AND,Andorra,Europe,FALSE,FALSE,NA
+AUT,Österreich,Europe,TRUE,FALSE,NA
+BEL,Belgien,Europe,TRUE,FALSE,NA
+CMR,Kamerun,Africa,FALSE,FALSE,NA
+HRV,Kroatien,Europe,TRUE,FALSE,NA
+DNK,Dänemark,Europe,TRUE,FALSE,NA
+ERI,Eritrea,Africa,FALSE,FALSE,NA
+EST,Estland,Europe,TRUE,FALSE,NA
+FJI,Fidschi,Oceania,FALSE,FALSE,NA
+FIN,Finnland,Europe,TRUE,FALSE,NA
+DEU,Deutschland,Europe,TRUE,FALSE,NA
+GRC,Griechenland,Europe,TRUE,FALSE,NA
+ISR,Israel,Asia,FALSE,FALSE,NA
+ITA,Italien,Europe,TRUE,FALSE,NA
+JPN,Japan,Asia,FALSE,FALSE,NA
+KIR,Kiribati,Oceania,FALSE,FALSE,NA
+LVA,Lettland,Europe,TRUE,FALSE,NA
+LIE,Liechtenstein,Europe,FALSE,FALSE,NA
+LTU,Litauen,Europe,TRUE,FALSE,NA
+LUX,Luxemburg,Europe,TRUE,FALSE,NA
+MLT,Malta,Europe,TRUE,FALSE,NA
+MHL,Marshallinseln,Oceania,FALSE,FALSE,NA
+FSM,Mikronesien,Oceania,FALSE,FALSE,NA
+MDA,Republik Moldau,Europe,FALSE,FALSE,NA
+MCO,Monaco,Europe,FALSE,FALSE,NA
+MMR,Myanmar,Asia,FALSE,FALSE,NA
+NRU,Nauru,Oceania,FALSE,FALSE,NA
+NLD,Niederlande,Europe,TRUE,FALSE,NA
+NZL,Neuseeland,Oceania,FALSE,FALSE,NA
+MKD,Nordmazedonien,Europe,FALSE,FALSE,NA
+PLW,Palau,Oceania,FALSE,FALSE,NA
+PAN,Panama,Americas,FALSE,FALSE,NA
+WSM,Samoa,Oceania,FALSE,FALSE,NA
+SMR,San Marino,Europe,FALSE,FALSE,NA
+SGP,Singapur,Asia,FALSE,FALSE,NA
+SLB,Salomon-Inseln,Oceania,FALSE,FALSE,NA
+KOR,"Korea, Republik von",Asia,FALSE,FALSE,NA
+CHE,Schweiz,Europe,FALSE,FALSE,NA
+TON,Tonga,Oceania,FALSE,FALSE,NA
+TUV,Tuvalu,Oceania,FALSE,FALSE,NA
+USA,Vereinigte Staaten,Americas,FALSE,FALSE,NA

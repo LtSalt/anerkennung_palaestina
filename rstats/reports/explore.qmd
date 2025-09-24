@@ -16,7 +16,7 @@ states <- read_csv("data/processed/states.csv")
 ```
 
 ```{r}
-p <- states %>% 
+states %>% 
   mutate(state = fct_reorder(as.factor(state), date)) %>% 
   mutate(date = replace_na(date, 2025)) %>% 
   ggplot() +
@@ -25,7 +25,10 @@ p <- states %>%
   geom_segment(aes(x = state, xend = state, 
                    y = date, yend = 2025,
                    color = recognizes)) +
+  geom_segment((aes(x = state, xend = state,
+                    y = 1988, yend = date))) +
   geom_hline(yintercept = 2023, linetype = "dashed", linewidth = 0.2) +
+  scale_color_manual(values = c("grey", "blue")) +
   scale_y_reverse() +
   theme_minimal() +
   theme(axis.text.x = element_blank(),
@@ -41,15 +44,46 @@ p
 ggplotly(p)
 ```
 
+```{r}
+states %>% 
+  mutate(state = fct_reorder(as.factor(state), date)) %>% 
+  mutate(date = replace_na(date, 2025)) %>% 
+  ggplot() +
+  geom_point(aes(x = state, y = 2025, color = recognizes),
+             size = 0.4) +
+  geom_segment(aes(x = state, xend = state, 
+                   y = date, yend = 2025,
+                   color = recognizes)) +
+  geom_segment((aes(x = state, xend = state,
+                    y = 1988, yend = date),
+                color = "grey")) +
+  geom_hline(yintercept = 2023, linetype = "dashed", linewidth = 0.2) +
+  scale_color_manual(values = c("grey", "blue")) +
+  scale_y_reverse() +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        legend.position = "none") +
+  labs(x = NULL,
+       y = "Datum",
+       color = NULL)
+```
+
+
 
 ```{r}
 states %>% 
-  filter(eu28) %>% view()
+  filter(eu28) %>%
   count(recognizes)
-  
-  
-  
 ```
+
+```{r}
+states %>% 
+  mutate(diff = 1988 - date)
+```
+
 
 
 
