@@ -147,6 +147,11 @@ view(by_continent_dw)
 write_csv(by_continent_dw, "data/processed/by_continent_dw.csv")
 ```
 
+```{r}
+states %>% 
+```
+
+
 
 
 

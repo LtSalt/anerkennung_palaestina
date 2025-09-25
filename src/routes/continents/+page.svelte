@@ -4,10 +4,6 @@
 
 	const { byContinent } = page.data;
 
-	// $inspect(byContinent);
-
-	console.table(byContinent);
-
 	let width = $state();
 	const padding = 16;
 </script>
