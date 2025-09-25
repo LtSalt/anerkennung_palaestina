@@ -50,13 +50,13 @@ states %>%
   mutate(date = replace_na(date, 2025)) %>% 
   ggplot() +
   geom_point(aes(x = state, y = 2025, color = recognizes),
-             size = 0.4) +
+             size = 0.6) +
   geom_segment(aes(x = state, xend = state, 
                    y = date, yend = 2025,
                    color = recognizes)) +
-  geom_segment((aes(x = state, xend = state,
+  geom_segment(aes(x = state, xend = state,
                     y = 1988, yend = date),
-                color = "grey")) +
+                color = "grey") +
   geom_hline(yintercept = 2023, linetype = "dashed", linewidth = 0.2) +
   scale_color_manual(values = c("grey", "blue")) +
   scale_y_reverse() +
@@ -84,6 +84,31 @@ states %>%
   mutate(diff = 1988 - date)
 ```
 
+
+```{r}
+nrow(states)
+years <- tibble(year = seq(1988, 2025, 1))
+
+recognition_time <- states %>% 
+  filter(!is.na(date)) %>% 
+  count(date) %>% 
+  full_join(years, by = c("date" = "year")) %>% 
+  arrange(date) %>% 
+  mutate(n = replace_na(n, 0),
+         sum = accumulate(n, sum)) %>% 
+  select(-n)
+
+write_csv(recognition_time, "data/processed/recognition_time.csv")
+```
+
+```{r}
+counter <- recognition_time %>% 
+  rename(pro = sum) %>% 
+  mutate(con = 192 - pro) %>% 
+  pivot_longer(pro:con, names_to = "stance", values_to = "n")
+
+write_csv(counter, "data/processed/counter.csv")
+```
 
 
 

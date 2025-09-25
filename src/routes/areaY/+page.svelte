@@ -9,45 +9,43 @@
 	let { states, counter } = $derived(page.data);
 
 	const nMax = 192;
-	const year = new Tween(2011, { duration: 800, easing: cubicOut });
-	let year2 = $state(1990);
+	const year = new Tween(2011, {
+		duration: 800,
+		easing: cubicOut,
+		interpolate: (from, to) => (t) => Math.round(from + (to - from) * t)
+	});
+	const targets = [1988, 2000, 2011, 2025];
 
-	let tracker = $derived(counter.filter((d) => d.date <= year2));
+	let tracker = $derived(counter.filter((d) => d.date <= year.current));
 	let nPro = $derived(tracker.at(-1)['sum']);
+
 	let clipPath = $derived([
 		{ x: 192, y: 1988 },
-		{ x: 192, y: year.current }
+		{ x: 192, y: year.current + 0.2 }
 	]);
 
-	function addYear() {
-		year2++;
-		console.log('hey');
-	}
+	let rangePro = $derived([
+		[0, year.current],
+		[nPro, year.current]
+	]);
 
-	let interval = $state();
-
-	function interpolateValues() {
-		interval = setInterval(addYear, 100);
-
-		// for (let i = year2; i < 2020; i++) {
-		// 	setTimeout(addYear, 1000);
-		// }
-	}
-
-	$effect(() => {
-		if (year2 == 2011) clearInterval(interval);
-	});
-
-	$inspect(year2);
+	let rangeCon = $derived([
+		[nPro, year.current],
+		[nMax, year.current]
+	]);
 </script>
 
-<input type="range" min="1988" max="2025" bind:value={year2} step="1" />
-<button onclick={interpolateValues}>Interpolate</button>
+<h1 class="my-4 text-xl">Area Y Chart with Clip-Path & Tween</h1>
 
-<button onclick={() => (year2 = 1988)}>1988</button>
-<button onclick={() => (year2 = 2000)}>2000</button>
-<button onclick={() => (year2 = 2011)}>2011</button>
-<button onclick={() => (year2 = 2025)}>2025</button>
+<div class="flex gap-4">
+	<input type="range" min="1988" max="2025" bind:value={year.target} step="1" />
+
+	<div class="flex gap-1">
+		{#each targets as target}
+			<button onclick={() => (year.target = target)}>{target}</button>
+		{/each}
+	</div>
+</div>
 
 <Plot
 	x={{ domain: [0, 192], label: false, axis: false }}
@@ -57,33 +55,11 @@
 	<clipPath id="clipPath">
 		<AreaX data={clipPath} x="x" y="y"></AreaX>
 	</clipPath>
-	<!-- <g clip-path="url(#clipPath)"> -->
-	<g>
-		<!-- <Line data={counter} x="sum" y="date" /> -->
-		<Line data={tracker} x="sum" y="date" style="transition: opacity 0.2s ease-in" />
-		<AreaX data={tracker} x="sum" y="date" fill="blue" opacity="0.2" />
-		<Area data={tracker} y1="date" x1="sum" x2={nMax} fill="red" opacity="0.2" />
-
-		<Line
-			data={[
-				[0, year.current],
-				[nPro, year.current]
-			]}
-			stroke="blue"
-		></Line>
-		<Line
-			data={[
-				[nPro, year.current],
-				[nMax, year.current]
-			]}
-			stroke="red"
-		></Line>
+	<g clip-path="url(#clipPath)">
+		<Line data={counter} x="sum" y="date" style="transition: opacity 0.2s ease-in" />
+		<AreaX data={counter} x="sum" y="date" fill="blue" opacity="0.2" />
+		<Area data={counter} y1="date" x1="sum" x2={nMax} fill="red" opacity="0.2" />
+		<Line data={rangePro} stroke="blue" strokeWidth="4"></Line>
+		<Line data={rangeCon} stroke="red" strokeWidth="4"></Line>
 	</g>
 </Plot>
-
-<style lang="postcss">
-	@reference "tailwindcss";
-	:global(html) {
-		background-color: theme(--color-gray-100);
-	}
-</style>
