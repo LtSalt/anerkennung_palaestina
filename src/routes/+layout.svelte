@@ -15,6 +15,7 @@
 		<li class=""><a href="/areaY">AreaY</a></li>
 		<li class=""><a href="/areaX">AreaX</a></li>
 		<li class=""><a href="/areaXTween">AreaXTween</a></li>
+		<li class=""><a href="/continents">Continents</a></li>
 	</ul>
 </nav>
 

@@ -26,3 +26,9 @@
 ## SveltePlot
 - margin shortcut funktioniert nicht
 - Transitions? Wie male ich einen Path ohne Svelte Transitions?
+
+
+circIn
+cubicOut
+linear und bissl schneller
+sineOut

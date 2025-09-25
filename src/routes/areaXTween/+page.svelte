@@ -3,7 +3,6 @@
 	import { linear } from 'svelte/easing';
 	import { page } from '$app/state';
 	import { Plot, Line, AreaY, Frame, GridX, GridY } from 'svelteplot';
-	import { line } from 'd3';
 
 	const { counter } = page.data;
 	const targets = [1988, 2000, 2011, 2025];
