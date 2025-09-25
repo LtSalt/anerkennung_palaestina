@@ -72,10 +72,17 @@
 	marginRight={40}
 	grid={true}
 >
-	<AreaY data={tracker} x="date" y="sum" fill="blue" opacity="0.2"></AreaY>
-	<Line data={tracker} x="date" y="sum" lineClass="tracker" style="--from: {from}; --to: {to};" />
-	<Line data={rangePro} lineClass="dashed"></Line>
-	<Dot data={[{ year, nPro }]} x="year" y="nPro" r={4} stroke="black" class="dot"></Dot>
+	<!-- <AreaY data={tracker} x="date" y="sum" fill="blue" opacity="0.2"></AreaY> -->
+	<Line
+		data={tracker}
+		x="date"
+		y="sum"
+		lineClass="tracker"
+		style="--from: {from}; --to: {to};"
+		markerEnd="circle"
+	/>
+	<!-- <Line data={rangePro} lineClass="dashed"></Line>
+	<Dot data={[{ year, nPro }]} x="year" y="nPro" r={4} stroke="black" class="dot"></Dot> -->
 </Plot>
 
 <style>
@@ -99,12 +106,12 @@
 
 	:global(.dot) {
 		/* offset-path: path('M 50 100 Q 200 50 350 100'); */
-		/* animation: move 3s linear infinite; */
+		/* animation: move 2s linear ease-out; */
 	}
 
 	@keyframes move {
 		to {
-			/* offset-distance: 100%; */
+			offset-distance: 100%;
 		}
 	}
 </style>

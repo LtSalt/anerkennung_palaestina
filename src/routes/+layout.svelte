@@ -14,6 +14,7 @@
 	<ul class="flex gap-2 pr-2">
 		<li class=""><a href="/areaY">AreaY</a></li>
 		<li class=""><a href="/areaX">AreaX</a></li>
+		<li class=""><a href="/areaXTween">AreaXTween</a></li>
 	</ul>
 </nav>
 
