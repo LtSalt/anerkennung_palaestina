@@ -110,7 +110,8 @@ write_csv(states_export, "data/processed/states.csv")
 
 
 
-
+options(.chattr_chat = ellmer::chat_github(model = "gpt-4.1"))
+chattr::chattr_app()
 
   
   
