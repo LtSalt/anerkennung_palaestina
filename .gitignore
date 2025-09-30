@@ -24,3 +24,5 @@ vite.config.ts.timestamp-*
 
 # R
 rstats/.Rproj.user
+rstats/.Rproj.user/*
+.Rproj.user
